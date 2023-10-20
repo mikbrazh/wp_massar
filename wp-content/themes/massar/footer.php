@@ -7,7 +7,7 @@
 
             <div class="footer__top-block">
                 <div class="footer__logo-block">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/img/svg/footer-logo.svg" alt="Логотип компании" class="footer__logo">
+                    <img src="<?php the_field('footer-logo'); ?>" alt="Логотип компании" class="footer__logo">
                     <p class="footer__logo-subtext">Капсульная транспортировка для любых учреждений</p>
                 </div>
                 <div class="footer__made-by-block">
@@ -16,7 +16,7 @@
                 </div>
                 <div class="footer__contacts-block">
                     <p class="footer__contacts-text">Звоните, мы в офисе</p>
-                    <a href="tel:+78124413056" class="footer__contacts-phone">+7 (812) 441 - 30 - 56</a>
+                    <a href="tel:<?php the_field('phone-tec'); ?>" class="footer__contacts-phone"><?php the_field('phone'); ?></a>
                     <p class="footer__contacts-address">СПб, ул. Введенская, д.21, пом. 32Н, офис 3</p>
                 </div>
             </div>
@@ -173,7 +173,6 @@
 </div>
 
 <!-- ======= after footer START ======= -->
-
 <!-- ======= modal START ======= -->
 <div class="modal modal-order" id="modal-order">
     <div class="container">
@@ -191,7 +190,6 @@
     <div class="modal-order__bg modal-exit"></div>
 </div>
 <!-- ======= modal END ======= -->
-
 <!-- ======= after footer END ======= -->
 
 <!-- ======= HTML END ======= -->

@@ -1,45 +1,21 @@
 <!DOCTYPE html>
+
 <html <?php language_attributes(); ?>>
 
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Пневмопочта. Системы пневмопочты установка под ключ: ООО ПТС ИНЖИНИРИНГ</title>
-
-    <!-- Favicons START -->
-    <link rel="icon" href="favicon.ico">
-    <link rel="apple-touch-icon" sizes="57x57" href="<?php bloginfo('template_url'); ?>/assets/img/fav/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="<?php bloginfo('template_url'); ?>/assets/img/fav/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="<?php bloginfo('template_url'); ?>/assets/img/fav/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="<?php bloginfo('template_url'); ?>/assets/img/fav/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo('template_url'); ?>/assets/img/fav/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="<?php bloginfo('template_url'); ?>/assets/img/fav/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="<?php bloginfo('template_url'); ?>/assets/img/fav/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="<?php bloginfo('template_url'); ?>/assets/img/fav/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('template_url'); ?>/assets/img/fav/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="<?php bloginfo('template_url'); ?>/assets/img/fav/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="<?php bloginfo('template_url'); ?>/assets/img/fav/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="<?php bloginfo('template_url'); ?>/assets/img/fav/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo('template_url'); ?>/assets/img/fav/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="<?php bloginfo('template_url'); ?>/assets/img/fav/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    <!-- Favicons END -->
 
-    <!-- ======= CSS START ======= -->
     <?php wp_head(); ?>
-
-    <!-- <link rel="stylesheet" href="css/vendor.min.css">
-    <link rel="stylesheet" href="css/style.min.css"> -->
-    <!-- ======= CSS END ======= -->
 </head>
 
 <body>
     <!-- ======= HTML START ======= -->
 
     <!-- ======= before header START ======= -->
-
     <!-- preloader START -->
     <!-- <div id="preloader">
         <span class="loader"></span>
@@ -128,7 +104,6 @@
         </div>
     </div>
     <!-- ======= canvi-mobile-navbar END ======= -->
-
     <!-- ======= before header END ======= -->
 
     <div class="canvi-content">
@@ -141,18 +116,18 @@
                 <div class="container">
 
                     <div class="header__top-layout">
-                        <div class="header__logo">
 
+                        <div class="header__logo">
                             <?php the_custom_logo(); ?>
-                    
                             <p class="header__logo-text d-none d-sm-block">Капсульная транспортировка для любых
                                 учреждений</p>
                         </div>
-                        <div class="header__map d-none d-lg-block">
-                            <img src="<?php bloginfo('template_url'); ?>/assets/img/svg/map.svg" alt="Изображение карты России" class="header__map-img" width="63"
-                                height="34">
+
+                        <div class="header__map d-none d-lg-flex">
+                            <img src="<?php the_field('header-map-image'); ?>" alt="Изображение карты России" class="header__map-img" width="63" height="34">
                             <p class="header__map-text">Работаем по всей РФ</p>
                         </div>
+
                         <div class="header__form-group">
                             <div class="header__dropdown">
                                 <button class="header__dropdown-button"></button>
@@ -168,15 +143,18 @@
                                     class="header__dropdown-input-hidden">
                             </div>
                         </div>
+
                         <div class="header__email d-none d-lg-block">
                             <p class="header__email-text">Пишите на почту</p>
-                            <a href="mailto:info@ptseng.ru" class="header__email-address">info@ptseng.ru</a>
+                            <a href="mailto:<?php the_field('email'); ?>" class="header__email-address"><?php the_field('email'); ?></a>
                         </div>
+
                         <div class="header__phone d-none d-lg-block">
                             <div class="header__phone-text">Звоните, мы в офисе</div>
-                            <a href="tel:+78124413056" class="header__phone-number">+7 (812) 441-30-56</a>
+                            <a href="tel:<?php the_field('phone-href'); ?>" class="header__phone-number"><?php the_field('phone'); ?></a>
                             <a data-modal="modal-order" href="#" class="header__phone-recall-button">Перезвоните мне</a>
                         </div>
+
                         <button class="canvi-open-button header__hamburger-button d-block d-lg-none">
                             <svg class="header__hamburger-icon" width="32" height="32" viewBox="0 0 32 32" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -205,7 +183,8 @@
                 <div class="container">
 
                     <div class="header__bottom-layout">
-                        <nav class="header__nav">
+
+                        <!-- <nav class="header__nav">
                             <ul class="header__nav-list">
                                 <li class="header__nav-item">
                                     <a href="#" class="header__nav-link">Пневмопочта</a>
@@ -303,7 +282,36 @@
                                     <a href="#" class="header__nav-link">Контакты</a>
                                 </li>
                             </ul>
-                        </nav>
+                        </nav> -->
+
+
+                        <nav class="header__nav">
+
+                        <?php
+
+wp_nav_menu( [
+	'theme_location'  => 'nav-header',
+	'menu'            => '',
+	'container'       => '',
+	'container_class' => '',
+	'container_id'    => '',
+	'menu_class'      => '',
+	'menu_id'         => '',
+	'echo'            => true,
+	'fallback_cb'     => 'wp_page_menu',
+	'before'          => '',
+	'after'           => '',
+	'link_before'     => '',
+	'link_after'      => '',
+	'items_wrap'      => '<ul class="header__nav-list">%3$s</ul>',
+	'depth'           => 0,
+	'walker'          => '',
+] );
+
+                        ?>
+
+</nav>
+                        
                     </div>
 
                 </div>
